@@ -5,6 +5,8 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import SearchLookUpField from "./SearchLookUpField";
 import { GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
+import { Card } from "@mui/material";
+import { Height } from "@mui/icons-material";
 
 function App() {
   const rows = [
@@ -43,16 +45,17 @@ function App() {
       <CssBaseline />
 
       <Container maxWidth="sm">
-        <h1>PartId : {value ? value : "-"}</h1>
-
-        <SearchLookUpField
-          valueMember="id"
-          displayMember="partCode"
-          rows={rows}
-          columns={columns}
-          value={value}
-          onChangeValue={handleSearchFieldChange}
-        />
+        <Card sx={{ height: 300 }}>
+          <h1>PartId : {value ? value : "-"}</h1>
+          <SearchLookUpField
+            valueMember="id"
+            displayMember="partCode"
+            rows={rows}
+            columns={columns}
+            value={value}
+            onChangeValue={handleSearchFieldChange}
+          />
+        </Card>
       </Container>
     </div>
   );
